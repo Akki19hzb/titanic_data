@@ -23,7 +23,7 @@ def extract_data(url, file_path):
             response = c.get(url, stream=True)
             for block in response.iter_content(1024):
                 handle.write(block)
-                
+
 def main(project_dir):
     '''
     main method
@@ -31,7 +31,7 @@ def main(project_dir):
     # get logger
     logger = logging.getLogger(__name__)
     logger.info('getting raw data')
-    
+
     # urls
     train_url = 'https://www.kaggle.com/c/titanic/download/train.csv'
     test_url = 'https://www.kaggle.com/c/titanic/download/test.csv'
@@ -49,7 +49,7 @@ def main(project_dir):
 if __name__ == '__main__':
     # getting root directory
     project_dir = os.path.join(os.path.dirname(__file__), os.pardir, os.pardir)
-    
+
     # setup logger
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(level=logging.INFO, format=log_fmt)
